@@ -1,6 +1,6 @@
 {
 	"id": "com.webos.meetups",
-	"version": "1.0.178",
+	"version": "1.0.179",
 	"vendor": "webOS Community Events",
 	"type": "web",
 	"main": "index.html",

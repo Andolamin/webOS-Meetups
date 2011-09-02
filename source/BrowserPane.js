@@ -60,7 +60,7 @@ enyo.kind({
 			{name: "windowContents", flex: 1, components: [
 				{name: "windowWebView", kind: "WebView", style: "position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;", minFontSize: 2, onLoadStarted: "webViewLoadStarted", onLoadStopped: "webViewLoadStopped", onPageTitleChanged: "webViewTitleChanged", onDisconnected: "webViewDisconnected"}
 			]},
-			{kind: "Button", style: "position: absolute; top: 0px; right: 0px;", caption: "Close", onclick: "handlePopupClose"},
+			{kind: "ToolButton", name: "close", className: "actionbar-tool-button", style: "position: absolute; top: 0px; right: 0px;", onclick: "handlePopupClose", icon: "images/menu-icon-stop.png"},
 			{kind: "enyo.SpinnerLarge", style: "position: absolute; left: 50%; top: 50%; margin-left: -64px; margin-top: -64px;"}
 		]}
 	],
