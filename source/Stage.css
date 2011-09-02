@@ -38,7 +38,7 @@
 }
 
 .enyo-toaster .basic-back {
-	background-color: #D8D8D8;
+	background-color: rgb(229,229,229);
 }
 
 .bookmarksList {
@@ -49,10 +49,12 @@
 	white-space: nowrap;
 	overflow-x: hidden;
 	text-overflow: ellipsis;
+	font-weight: bold;
 }
 
 .url {
 	white-space: nowrap;
 	overflow-x: hidden;
 	text-overflow: ellipsis;
+	font-size: smaller;
 }

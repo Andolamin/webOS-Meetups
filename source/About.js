@@ -59,11 +59,5 @@ enyo.kind({
 	handleBackButton: function(inSender, inEvent) {
 		this.doClose();
 		this.$.generalScroller.setScrollTop(0);
-	},
-	handleAlansApps: function(inSender, inEvent) {
-		//DEVSEARCH
-	},
-	handleRichsApps: function(inSender, inEvent) {
-		
 	}
 });

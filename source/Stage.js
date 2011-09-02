@@ -55,6 +55,34 @@ enyo.kind({
 	bookmarks: [],
 	create: function() {
 		this.bookmarks = (localStorage.getItem("com.webos.meetups.bookmarks") ? JSON.parse(localStorage.getItem("com.webos.meetups.bookmarks")) : []);
+		if (localStorage.getItem("com.webos.meetups.bookmarksSet") !== "1") {
+			// Load in the default bookmarks
+			this.log("Setting up default bookmarks");
+			var defaultBookmarks = [
+				{title: "The New York webOS Developers Meetup (New York, NY) - Meetup", url: "http://www.meetup.com/The-New-York-webOS-Software-Developers-Meetup/"},
+				{title: "San Diego webOS Meetup (San Diego, CA) - Meetup", url: "http://www.meetup.com/San-Diego-webOS-Meetup/"},
+				{title: "The Los Angeles Palm webOS Developers Meetup (Los Angeles, CA) - Meetup", url: "http://www.meetup.com/lawebos/"},
+				{title: "webOS Meetup: SF Bay Area (San Francisco, CA) - Meetup", url: "http://www.meetup.com/sfbaywebos/"},
+				{title: "DC WebOS Developers Group (Washington, DC) - Meetup", url: "http://www.meetup.com/DCwebOSdev/"},
+				{title: "webOS Baltimore (Baltimore, MD) - Meetup", url: "http://www.meetup.com/webos-baltimore/"},
+				{title: "WebOS Meetup Montreal (Montréal, QC) - Meetup", url: "http://www.meetup.com/WebOS-Meetup-Montreal/"},
+				{title: "Paris webOS Developers Meetup (Paris) - Meetup", url: "http://www.meetup.com/webOS-developers/"},
+				{title: "webOS London (London, England) - Meetup", url: "http://www.meetup.com/webOS-London/"}
+			];
+			for (var x = 0; x < defaultBookmarks.length; x++) {
+				var found = false;
+				for (var y = 0; y < this.bookmarks.length; y++) {
+					if (this.bookmarks[y].url === defaultBookmarks[x].url) {
+						found = true;
+					}
+				}
+				if (!found) {
+					this.bookmarks.push(defaultBookmarks[x]);
+				}
+			}
+			localStorage.setItem("com.webos.meetups.bookmarksSet", "1");
+		}
+		localStorage.setItem("com.webos.meetups.bookmarks", enyo.json.stringify(this.bookmarks));
 		this.inherited(arguments);
 	},
 	handleBookmarksPress: function(inSender, inEvent) {
