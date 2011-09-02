@@ -1,0 +1,11 @@
+{
+	"id": "com.webos.meetups",
+	"version": "0.0.114",
+	"vendor": "webOS Community Events",
+	"type": "web",
+	"main": "index.html",
+	"title": "webOS Community Meetups",
+	"icon": "icon.png",
+	"uiRevision":2,
+	"splashicon": "icon_splash.png"
+}
